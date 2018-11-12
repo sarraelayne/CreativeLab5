@@ -1,3 +1,14 @@
-knockoff reddit
-voting system
-buzzfeed polls 
+RESTAURANT MAP(ISH)
+
+-Have users input new restaurants (name, address, type of food)
+-Users review restaurants
+-Users rate restaurants
+-Search for restaurants
+
+HOME
+Add restaurant
+    -Add review
+        -search and for that restaurant add a review
+        -build discussion board?
+    -Add rating (avg out ratings)
+Search
