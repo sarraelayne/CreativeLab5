@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Provo Restaurants</title>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="javascripts/ratings.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    </head>
+    <header>
+        Provo Restaurant Scene
+    </header>
+    <body>
+        <br>
+        <form id="commentForm" action="">
+        <label for="name">Name: </label><input type="text" id="name" placeholder="Name"><br><br>
+        <label for="comment">Comment: </label><input type="text" id="comment" placeholder="Comment"><br><br>
+        </form>
+        
+        <button id="postComment">Post Comment</button>
+        <button id="getComments">Get Comments</button>
+        <button id="deleteComments">Delete All</button><br><br>
+        
+        <form id="searchRest" action="">
+        <label for="name">Find a restaurant: </label><input type="text" id="query" placeholder="Name">
+        <button id="searchRests">Search</button>
+        </form>
+        <br><br>
+        <div id="json"></div>
+        <div id="done"></div>
+        <br>
+        <div class="card">
+            <div class="container">
+                <div id="comments"></div>
+            </div>
+        </div>
+    </body>
+</html>
