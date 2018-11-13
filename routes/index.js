@@ -5,7 +5,8 @@ var mongoose = require('mongoose'); //Adds mongoose as a usable dependency
 mongoose.connect('mongodb://localhost/commentDB',{ useNewUrlParser: true });
 var reviewSchema = mongoose.Schema({ //Defines the Schema for this database
     Name: String,
-    Comment: String
+    Comment: String,
+    Image: String
 });
 var Review = mongoose.model('Review', reviewSchema); //Makes an object from that schema as a model
 var db = mongoose.connection; //Saves the connection as a variable to use
