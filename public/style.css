@@ -4,10 +4,16 @@ header {
   text-align: center;
 }
 body {
+  background-color: #0d0d0d;
+  color: white;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+.reviewTextbox {
+  height: 100px;
+  width: 400px;
+  vertical-align: top;
+}
 a {
   color: #00B7FF;
 }

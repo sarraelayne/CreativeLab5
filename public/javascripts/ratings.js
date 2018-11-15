@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $("#postComment").click(function(){
-      var myobj = {Name:$("#name").val(),Comment:$("#comment").val()};
+      var myobj = {Name:$("#name").val(),Comment:$("#comment").val(),
+        Image:$("#imageLink").val(),Type:$("#genre").val()};
       jobj = JSON.stringify(myobj);
       $("#json").text(jobj);
       var url = "comment";
@@ -19,8 +20,10 @@ $(document).ready(function(){
       console.log(data);
       var everything = "Comments Matrix <br>";
       for(var comment in data) {
-        com = data[comment];
+        var com = data[comment];
         everything += "Name: " + com.Name + " -- Comment: " + com.Comment + "<br>";
+        everything += "Image Link: " + com.Image + "<br>";
+        everything += "Type of Food: " + com.Type + "<br>";
       }
       $("#comments").html(everything);
     });
@@ -37,7 +40,7 @@ $(document).ready(function(){
     });
 
   });
-  $("#searchComments").click(function(event) {
+  $("#searchRest").click(function(event) {
     event.preventDefault();
     var name = $("#query").val();
     var URL = "comment?q=" + name;
@@ -46,8 +49,10 @@ $(document).ready(function(){
       console.log(data);
       var userCom = "Comments Matrix <br>";
       for(var comment in data) {
-        com = data[comment];
+        var com = data[comment];
         userCom += "Name: " + com.Name + " -- Comment: " + com.Comment + "<br>";
+        userCom += "Image Link: " + com.Image + "<br>";
+        userCom += "Type of Food: " + com.Type + "<br>";
       }
       $("#comments").html(userCom);
     })

@@ -5,8 +5,9 @@ var mongoose = require('mongoose'); //Adds mongoose as a usable dependency
 mongoose.connect('mongodb://localhost/commentDB',{ useNewUrlParser: true });
 var reviewSchema = mongoose.Schema({ //Defines the Schema for this database
     Name: String,
-    Comment: String,
-    Image: String
+    Image: String,
+    Type: String,
+    Comment: String
 });
 var Review = mongoose.model('Review', reviewSchema); //Makes an object from that schema as a model
 var db = mongoose.connection; //Saves the connection as a variable to use
@@ -14,7 +15,20 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
     console.log('Connected');
 });
-
+/*Groups each item by restaurant name*/
+/*Review.aggregate(
+    [
+        {
+            $group: {
+                "_id": {
+                      "category": "$category",
+                },
+                "names": {
+                      "$addToSet": "$name"
+                }
+            }
+        }
+    ]);*/
 /* GET home page. */
 router.post('/comment', function(req, res, next) {
     console.log("POST comment route"); 
@@ -30,6 +44,15 @@ router.post('/comment', function(req, res, next) {
       }
     });
 });
+router.delete('/comment', function(req, res, next) {
+  console.log("delete route");
+  Review.find().deleteMany(function(err, result) {
+    if(err) {
+      return console.log("delete error");
+    }
+    res.json(result);
+  });
+});
 
 router.get('/comment', function(req, res, next) {
     console.log("In the GET route?");
@@ -40,6 +63,8 @@ router.get('/comment', function(req, res, next) {
     if(searchName) {
       obj = {Name: searchName};
     }
+    console.log("obj: ");
+    console.log(obj)
     Review.find(obj,function(err,reviewList) { //Calls the find() method on your database
       if (err) return console.error(err); //If there's an error, print it out
       else {
