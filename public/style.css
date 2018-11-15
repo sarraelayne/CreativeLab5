@@ -3,11 +3,24 @@ header {
   font-size: 32px;
   text-align: center;
 }
+h1 {
+  font-size: 20;
+}
 body {
   background-color: #0d0d0d;
   color: white;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.leftCol {
+  float: left;
+  width: 50%;
+  height: auto;
+}
+.rightCol {
+  float: right;
+  width: 50%;
+  vertical-align: top;
 }
 .reviewTextbox {
   height: 100px;

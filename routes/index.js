@@ -15,20 +15,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
     console.log('Connected');
 });
-/*Groups each item by restaurant name*/
-/*Review.aggregate(
-    [
-        {
-            $group: {
-                "_id": {
-                      "category": "$category",
-                },
-                "names": {
-                      "$addToSet": "$name"
-                }
-            }
-        }
-    ]);*/
+
 /* GET home page. */
 router.post('/comment', function(req, res, next) {
     console.log("POST comment route"); 
@@ -63,8 +50,7 @@ router.get('/comment', function(req, res, next) {
     if(searchName) {
       obj = {Name: searchName};
     }
-    console.log("obj: ");
-    console.log(obj)
+    console.log(obj);
     Review.find(obj,function(err,reviewList) { //Calls the find() method on your database
       if (err) return console.error(err); //If there's an error, print it out
       else {
