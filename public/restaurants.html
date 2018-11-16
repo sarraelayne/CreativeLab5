@@ -2,10 +2,13 @@
 <html>
     <head>
         <title>Provo Restaurants</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="javascripts/ratings.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
     </head>
     <header>
         Provo Restaurant Scene
@@ -13,28 +16,32 @@
     <body>
         <br>
         <div class="leftCol">
-        <form id="commentForm" action="">
-        <label for="name">Restaurant Name: </label><input type="text" id="name" placeholder="Name"><br><br>
-        <label for="imageLink">Image Link: </label><input type="text" id="imageLink" placeholder="Image URL"><br><br>
-        <label for="genre">Type of Food: </label><input type="text" id="genre" placeholder="Type of Food"><br><br>
-        <label for="comment">Review: </label><textarea class="reviewTextbox" id="comment" placeholder="Comment"></textarea><br><br>
-        </form>
-        
-        <button id="postComment">Post Comment</button>
-        <button id="getComments">Get Comments</button>
-        <button id="deleteComments">Delete All</button><br><br>
-        
-        <form id="searchRest" action="">
-        <label for="name">Find a restaurant: </label><input type="text" id="query" placeholder="Name">
-        <button id="searchRests">Search</button>
-        </form>
+            <br><br><br>
+            <form id="commentForm" action="">
+            <label for="name">Restaurant Name: </label><input type="text" id="name" placeholder="Name"><br><br>
+            <label for="imageLink">Image Link: </label><input type="text" id="imageLink" placeholder="Image URL"><br><br>
+            <label for="genre">Type of Food: </label><input type="text" id="genre" placeholder="Type of Food"><br><br>
+            <label for="comment">Review: </label><textarea class="reviewTextbox" id="comment" placeholder="Comment"></textarea><br><br>
+            </form>
+            <a1>
+            <button id="postComment">Post Comment</button>
+            <button id="getComments">Get Comments</button>
+            <button id="deleteComments">Delete All</button><br><br>
+            </a1>
+            <form id="searchRest" action="">
+            <label for="name">Find a restaurant: </label><input type="text" id="query" placeholder="Name">
+            <button id="searchRests">Search</button>
+            </form>
         </div>
         <br><br>
         <div id="json"></div>
         <div id="done"></div>
         <br>
         <div class="rightCol">
-            <div id="comments"></div>
+            <div class="card">
+                <h1>Comments Matrix</h1>
+                <div id="comments"></div>
+            </div>
         </div>
     </body>
 </html>
