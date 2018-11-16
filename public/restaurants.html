@@ -11,10 +11,10 @@
         <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
     </head>
     <header>
-        Provo Restaurant Scene
+        Provo Restaurant Reviews
     </header>
     <body>
-        <br>
+        <h3>Leave a review on your favorite Provo restaurant here!</h3>
         <div class="leftCol">
             <br><br><br>
             <form id="commentForm" action="">
@@ -23,14 +23,14 @@
             <label for="genre">Type of Food: </label><input type="text" id="genre" placeholder="Type of Food"><br><br>
             <label for="comment">Review: </label><textarea class="reviewTextbox" id="comment" placeholder="Comment"></textarea><br><br>
             </form>
-            <a1>
-            <button id="postComment">Post Comment</button>
-            <button id="getComments">Get Comments</button>
-            <button id="deleteComments">Delete All</button><br><br>
-            </a1>
+            
+            <button class="button" id="postComment">Post Comment</button>
+            <button class="button" id="getComments">Get Comments</button>
+            <button class="button" id="deleteComments">Delete All</button><br><br>
+            
             <form id="searchRest" action="">
             <label for="name">Find a restaurant: </label><input type="text" id="query" placeholder="Name">
-            <button id="searchRests">Search</button>
+            <button class="button buttonSearch" id="searchRests">Search</button>
             </form>
         </div>
         <br><br>
