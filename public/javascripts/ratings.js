@@ -25,6 +25,7 @@ $(document).ready(function() {
     $.getJSON('comment', function(data) {
       console.log(data);
       var everything = "";
+      Dict = [];
       for (var comment in data) {
         var com = data[comment];
         //if nothing new, then don't call this function? 
